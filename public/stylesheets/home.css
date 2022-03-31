@@ -1,133 +1,117 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  background-color: #edeff5;
+  background-color: #DCE1DE;
+  height: 78vh;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 button {
   background-color: #f5c25d;
   border-radius: 5px;
+  border: 0;
 }
 
 #header {
   background-image: url('../images/new-homebanner.png');
-  height: 300px;
-  border-bottom: 2px solid rgb(255, 255, 255);
+  height: 22vh;
+  width: 100vw;
+  border-bottom: 1px solid #38A3A5;
 }
 
-#user-status {
-  width: 200px;
-  height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  position: relative;
-  left: 75%;
-  top: -75px;
-  background-color: #c8d7e4;
-  text-align: center;
-  padding: 15px 5px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#searchbar {
-  position: relative;
-  left: 73%;
-  width: 15%;
-  top: -50px;
+#home-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-
-#searchbar input {
-  padding: 3px;
-  margin-right: 5px;
-}
-
-#searchbar #search-button {
-  background: url(icn_nav_search.svg) no-repeat center;
-  background-color: #f5c25d;
-  height: 25px;
-  width: 25px;
-  position: relative;
-  top: 5px;
-}
-
-#searchbar #show-all-button{
-  width: fit-content;
-  height: 25px;
-  position: relative;
-  cursor: pointer;
-  margin-left: 3px;
-}
-
-#potion-types {
-  position: relative;
-  width: 200px;
-  display: flex;
-  left: 75%;
-  top: -35px;
-  text-align: center;
-}
-
-#potion-types button{
-  margin: 5px;
+  justify-content: space-between;
+  margin-top: 2em;
 }
 
 #recent {
-  position: relative;
-  top: -150px;
-  left: 5%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  height: auto;
-  width: 60%;
-  padding: 10px;
-  background-color: #c8d7e4;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(5, 200px);
-  grid-template-rows: 1fr 4fr 4fr;
-  justify-content: center;
-}
-
-#recent > h2 {
-  padding-left: 10px;
-  grid-column: 1 / span 5;
-}
-
-#recent > a {
-  text-decoration: none;
-  color: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 60vw;
+  max-width: 60vw;
+  margin-left: 2em;
+  background-color: #1F2421;
+  height: fit-content;
+  border-radius: .5em;
+  color: #DCE1DE;
+  padding: .25em;
 }
 
-#recent h5 {
-  font-size: 16px;
-  text-align: center;
+#recent h2 {
+  margin-left: 1em;
+  font-family: 'Original Surfer', cursive;
+}
+
+#potion-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 #potion-card {
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  height: auto;
-  width: auto;
+  text-decoration: none;
+  padding: .5em 0;
+  height: 16em;
+}
+
+#potion-card:hover {
+  background-color: #9CC5A1;
+  border-radius: .25em;
 }
 
 #potion-image {
-  width: 150px;
-  height: auto;
+  height: 10em;
 }
 
-a {
-  color: #8C5E1D;
-  text-decoration: none;
-  font-weight: bold;
+#potion-card h5 {
+  color: #216869;
+  font-size: large;
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 1px;
+  width: 80%;
+}
+
+#user-n-search {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#user-status {
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
+  background-color: #1F2421;
+  padding: 2em;
+}
+
+#searchbar {
+  width: 100%;
+}
+
+#searchbar-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#searchbar-form input {
+  width: 40%;
+  font-size: larger;
+  padding: .25em;
 }

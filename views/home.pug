@@ -9,36 +9,39 @@ html
 
     body
         div(id='header')
-        div(id='user-status')
-            if locals.authenticated
-                span Welcome, #{user.username} !
-                br
-                form(action="/logout" method="post")
-                    button(type="submit" id='logmeout') Logout
-                br
-                //- a(href="/inventory") Go to Inventory
-            else
-                a(href='/signup') Create an account
-                br
-                a(href='/login') Log in
-                br
-                form#demo-button(action="/demo" method="post")
-                    button(type="submit") Demo
+        div(id='home-container')
+            div(id='recent')
+                h2 Recently Created Potions
+                div(id='potion-box')
+                    each potion in potions
+                        a(id='potion-card' href=`/potions/${potion.id}`)
+                            img(id='potion-image' src=`${potion.PotionType.image}`, alt="an image of a potion")
+                            h5 #{potion.name}
 
-        div(id='searchbar')
-            form(action="/search", method="post")
-                input(type="text" name='search' autocomplete="off" placeholder="Search by name...")
-                button(type="submit" id="search-button")
-                button(type="submit" id="show-all-button") All Types
+            div(id='user-n-search')
+                div(id='user-status')
+                    if locals.authenticated
+                        span Welcome, #{user.username} !
+                        br
+                        form(action="/logout" method="post")
+                            button(type="submit" id='logmeout') Logout
+                        br
+                    else
+                        a(href='/signup') Create an account
+                        br
+                        a(href='/login') Log in
+                        br
+                        form#demo-button(action="/demo" method="post")
+                            button(type="submit") Demo
 
-        div(id="potion-types")
-            form(action="/search/type", method="post")
-                each potionType in potionTypes
-                    button(id=`${potionType.name}` type="submit" name='type' value=`${potionType.name}`) #{potionType.name}
+                div(id='searchbar')
+                    form(action="/search", method="post" id='searchbar-form')
+                        input(type="text" name='search' autocomplete="off" placeholder="Search by name...")
+                        button(type="submit" id="search-button")
+                        button(type="submit" id="show-all-button") All Types
 
-        div(id='recent')
-            h2 Recently Created Potions
-            each potion in potions
-                a(id='potion-card' href=`/potions/${potion.id}`)
-                    img(id='potion-image' src=`${potion.PotionType.image}`, alt="an image of a potion")
-                    h5 #{potion.name}
+                div(id="potion-types")
+                    form(action="/search/type", method="post")
+                        each potionType in potionTypes
+                            button(id=`${potionType.name}` type="submit" name='type' value=`${potionType.name}`) #{potionType.name}
+
